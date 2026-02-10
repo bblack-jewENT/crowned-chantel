@@ -54,11 +54,19 @@ const Gallery: React.FC = () => {
                 className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
                 loading="lazy"
               />
+              {/* WhatsApp Share Badge */}
+              <div className="absolute top-3 right-3 bg-gradient-to-br from-green-400 to-green-600 rounded-full p-2 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:scale-110">
+                <i className="fab fa-whatsapp text-white text-lg"></i>
+              </div>
               <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
                 <span className="text-amber-400 text-xs tracking-widest uppercase mb-1">
                   {img.category}
                 </span>
                 <h4 className="text-white text-lg font-serif">{img.title}</h4>
+                <div className="flex items-center gap-2 mt-3 text-green-400 text-xs">
+                  <i className="fab fa-whatsapp"></i>
+                  <span>Share on WhatsApp</span>
+                </div>
               </div>
             </div>
           ))}
@@ -97,18 +105,46 @@ const Gallery: React.FC = () => {
                 Capture by Professional Photography Suite. All rights reserved ©
                 2024.
               </p>
-              <div className="flex gap-4 pt-4">
+              <div className="flex gap-4 pt-4 flex-wrap">
                 <button
-                  className="p-3 rounded-full bg-white/5 hover:bg-amber-400 hover:text-black transition-all"
-                  title="Instagram"
+                  onClick={() =>
+                    window.open(`https://www.instagram.com/`, "_blank")
+                  }
+                  className="p-3 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 hover:shadow-lg hover:shadow-pink-500/50 transition-all transform hover:scale-110"
+                  title="Share on Instagram"
                 >
-                  <i className="fab fa-instagram"></i>
+                  <i className="fab fa-instagram text-white"></i>
                 </button>
                 <button
-                  className="p-3 rounded-full bg-white/5 hover:bg-amber-400 hover:text-black transition-all"
+                  onClick={() => {
+                    const text = `Check out this stunning shot from Chantel's portfolio: "${selectedImage.title}" - ${selectedImage.category} category. 👑✨`;
+                    const url = `https://wa.me/?text=${encodeURIComponent(text + "\n\nVisit the full portfolio: crowned-chantel.com")}`;
+                    window.open(url, "_blank");
+                  }}
+                  className="p-3 rounded-full bg-gradient-to-br from-green-400 to-green-600 hover:shadow-lg hover:shadow-green-500/50 transition-all transform hover:scale-110"
+                  title="Share on WhatsApp"
+                >
+                  <i className="fab fa-whatsapp text-white"></i>
+                </button>
+                <button
+                  onClick={() => {
+                    const text = `"${selectedImage.title}" - ${selectedImage.category}\n\nFrom Chantel's professional portfolio`;
+                    navigator
+                      .share?.({
+                        title: selectedImage.title,
+                        text: text,
+                        url: window.location.href,
+                      })
+                      .catch(() => {
+                        // Fallback copy to clipboard
+                        navigator.clipboard.writeText(text);
+                        alert("Photo details copied to clipboard!");
+                      });
+                  }}
+                  className="p-3 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 hover:shadow-lg hover:shadow-blue-500/50 transition-all transform hover:scale-110"
                   title="Share"
                 >
-                  <i className="fas fa-share-alt"></i>
+                  <i className="fas fa-share-alt text-white"></i>
                 </button>
               </div>
             </div>
