@@ -9,7 +9,7 @@ const About: React.FC = () => {
         <div className="w-full lg:w-1/2 relative">
           <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border border-white/5 group">
             <img 
-              src="https://storage.googleapis.com/public-media-artifacts/ai-generated/image-30.png" 
+              src="/img/WhatsApp Image 2026-01-28 at 13.53.50.jpeg" 
               alt="Chantel Coronation" 
               className="w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-1000"
             />
