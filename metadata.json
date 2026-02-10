@@ -1,0 +1,8 @@
+{
+  "name": "Crowned Chantel",
+  "description": "A premium pageant modeling portfolio and coaching platform for Chantel, featuring her award-winning looks, professional stats, and an AI-powered pageant assistant.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
