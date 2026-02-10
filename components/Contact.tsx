@@ -28,7 +28,7 @@ const Contact: React.FC = () => {
                   Email
                 </span>
                 <span className="text-lg text-white">
-                  bookings@chantel.queen
+                  Chantelkulani9@gmail.com
                 </span>
               </div>
             </div>
@@ -40,7 +40,7 @@ const Contact: React.FC = () => {
                 <span className="block text-xs text-gray-500 uppercase tracking-widest">
                   Phone
                 </span>
-                <span className="text-lg text-white">+27 82 000 0000</span>
+                <span className="text-lg text-white">+27 81 249 3252</span>
               </div>
             </div>
             <div className="flex items-center gap-6 group">
@@ -51,9 +51,7 @@ const Contact: React.FC = () => {
                 <span className="block text-xs text-gray-500 uppercase tracking-widest">
                   Base
                 </span>
-                <span className="text-lg text-white">
-                  Johannesburg, South Africa
-                </span>
+                <span className="text-lg text-white">Pretoria, Gauteng</span>
               </div>
             </div>
           </div>
@@ -102,7 +100,7 @@ const Contact: React.FC = () => {
               <textarea
                 rows={5}
                 placeholder="Tell us more about your inquiry..."
-                className="w-full bg-black/40 border border-white/10 p-4 rounded-xl focus:outline-none focus:border-amber-400"
+                className="w-full bg-black/40 border border-white/10 p-4 rounded-xl focus:outline-none focus:border-amber-400 resize-none"
               ></textarea>
             </div>
             <div className="md:col-span-2 pt-4">
