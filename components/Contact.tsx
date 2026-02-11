@@ -28,7 +28,7 @@ const Contact: React.FC = () => {
                   Email
                 </span>
                 <span className="text-lg text-white">
-                  Chantelkulani9@gmail.com
+                  MaryNkosi08@gmail.com
                 </span>
               </div>
             </div>
