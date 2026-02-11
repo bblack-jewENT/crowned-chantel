@@ -42,13 +42,28 @@ const Footer: React.FC<FooterProps> = ({ onNavClick }) => {
         </nav>
 
         <div className="flex gap-8 mb-12">
-          {["instagram", "facebook-f", "tiktok", "youtube"].map((icon, idx) => (
+          {[
+            {
+              icon: "instagram",
+              url: "https://www.instagram.com/sithole_nkanyani/",
+            },
+            {
+              icon: "facebook-f",
+              url: "https://www.facebook.com/share/1FxmZWSe9X/?mibextid=wwXIfr",
+            },
+            {
+              icon: "tiktok",
+              url: "https://www.tiktok.com/@chantelkulani?_r=1&_t=ZS-93pK4zXP5of",
+            },
+          ].map((social, idx) => (
             <a
               key={idx}
-              href="#"
+              href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:gold-bg hover:text-black hover:border-transparent transition-all"
             >
-              <i className={`fab fa-${icon}`}></i>
+              <i className={`fab fa-${social.icon}`}></i>
             </a>
           ))}
         </div>
