@@ -97,7 +97,7 @@ const Charity: React.FC = () => {
                 </p>
               ) : customAmount ? (
                 <p className="text-gray-300 text-sm italic text-center animate-slideUp">
-                  Your contribution of ${customAmount} will support our general
+                  Your contribution of R{customAmount} will support our general
                   education fund.
                 </p>
               ) : (
@@ -338,7 +338,7 @@ const Charity: React.FC = () => {
                   Community Impact Goal
                 </span>
                 <span className="text-amber-400 font-serif text-2xl">
-                  ${CHARITY_INFO.current.toLocaleString()} / $
+                  R{CHARITY_INFO.current.toLocaleString()} / R
                   {CHARITY_INFO.goal.toLocaleString()}
                 </span>
               </div>

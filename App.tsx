@@ -1,15 +1,14 @@
-
-import React, { useState, useEffect } from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Gallery from './components/Gallery';
-import About from './components/About';
-import Stats from './components/Stats';
-import Assistant from './components/Assistant';
-import Charity from './components/Charity';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import { Section } from './types';
+import React, { useState, useEffect } from "react";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import Gallery from "./components/Gallery";
+import About from "./components/About";
+import Stats from "./components/Stats";
+import Assistant from "./components/Assistant";
+import Charity from "./components/Charity";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+import { Section } from "./types";
 
 const App: React.FC = () => {
   const [activeSection, setActiveSection] = useState<Section>(Section.HERO);
@@ -28,23 +27,26 @@ const App: React.FC = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (section: Section) => {
     const element = document.getElementById(section);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
     <div className="min-h-screen flex flex-col relative overflow-x-hidden">
       <Header activeSection={activeSection} onNavClick={scrollToSection} />
-      
+
       <main className="flex-grow">
-        <Hero onCtaClick={() => scrollToSection(Section.GALLERY)} />
+        <Hero
+          onCtaClick={() => scrollToSection(Section.GALLERY)}
+          onBookingClick={() => scrollToSection(Section.CONTACT)}
+        />
         <Gallery />
         <About />
         <Stats />

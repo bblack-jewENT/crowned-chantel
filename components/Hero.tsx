@@ -2,9 +2,10 @@ import React from "react";
 
 interface HeroProps {
   onCtaClick: () => void;
+  onBookingClick: () => void;
 }
 
-const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
+const Hero: React.FC<HeroProps> = ({ onCtaClick, onBookingClick }) => {
   return (
     <section
       id="hero"
@@ -41,7 +42,10 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
           >
             Explore Portfolio
           </button>
-          <button className="px-10 py-4 bg-transparent border border-white/30 hover:border-amber-400 text-white font-bold uppercase tracking-widest rounded-full transition-all">
+          <button
+            onClick={onBookingClick}
+            className="px-10 py-4 bg-transparent border border-white/30 hover:border-amber-400 text-white font-bold uppercase tracking-widest rounded-full transition-all"
+          >
             Inquire Now
           </button>
         </div>
