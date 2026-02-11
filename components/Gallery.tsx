@@ -103,7 +103,7 @@ const Gallery: React.FC = () => {
               </h4>
               <p className="text-gray-400 max-w-xs italic">
                 Capture by Professional Photography Suite. All rights reserved ©
-                2024.
+                2026.
               </p>
               <div className="flex gap-4 pt-4 flex-wrap">
                 <button

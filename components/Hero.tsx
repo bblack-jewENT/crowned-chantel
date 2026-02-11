@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React from "react";
 
 interface HeroProps {
   onCtaClick: () => void;
@@ -7,11 +6,14 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
+    >
       {/* Background Video/Image Placeholder */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src="https://storage.googleapis.com/public-media-artifacts/ai-generated/image-25.png" 
+        <img
+          src="https://storage.googleapis.com/public-media-artifacts/ai-generated/image-25.png"
           alt="Chantel Hero"
           className="w-full h-full object-cover opacity-40 scale-105 animate-slow-zoom"
         />
@@ -21,18 +23,19 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto space-y-8">
         <div className="space-y-4">
           <h2 className="text-amber-400 text-sm md:text-base font-medium tracking-[0.5em] uppercase animate-slideDown">
-            Miss Dauntless Models Queen 2024
+            Miss Dauntless Models Queen 2026
           </h2>
           <h1 className="text-5xl md:text-8xl font-serif font-bold gold-gradient drop-shadow-2xl animate-fadeIn">
             Chantel
           </h1>
           <p className="text-lg md:text-2xl text-gray-300 font-light max-w-2xl mx-auto leading-relaxed animate-slideUp">
-            Redefining grace, elegance, and high-fashion modeling on the global stage.
+            Redefining grace, elegance, and high-fashion modeling on the global
+            stage.
           </p>
         </div>
 
         <div className="flex flex-col md:flex-row items-center justify-center gap-6 animate-fadeInDelay">
-          <button 
+          <button
             onClick={onCtaClick}
             className="px-10 py-4 gold-bg text-black font-bold uppercase tracking-widest rounded-full hover:scale-105 transition-transform shadow-xl shadow-amber-500/20"
           >
@@ -47,7 +50,7 @@ const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-50">
         <i className="fas fa-chevron-down text-2xl text-amber-400"></i>
       </div>
-      
+
       <style>{`
         @keyframes fadeIn {
           from { opacity: 0; transform: translateY(20px); }
